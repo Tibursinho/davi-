@@ -1,97 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tecnologia no Campo</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drones de Pulverização</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1a73e8;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      height: 180px;
+      object-fit: cover;
+    }
+    .caption {
+      padding: 10px 15px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      background: #f9fafb;
+    }
+
+    /* Modal */
+    .modal {
+      display: none; /* hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.4);
+      animation: fadeInScale 0.3s ease forwards;
+      position: relative;
+      background: #fff;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s ease;
+    }
+    .close-btn:hover {
+      color: #1a73e8;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-item img {
+        height: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Tecnologia no Campo</h1>
-    <p>Conectando o Futuro à Terra</p>
-  </header>
+  <h1>Drones de Pulverização</h1>
 
-  <nav>
-    <ul>
-      <li><a href="#introducao">Introdução</a></li>
-      <li><a href="#tecnologias">Tecnologias</a></li>
-      <li><a href="#beneficios">Benefícios</a></li>
-      <li><a href="#casos">Casos Reais</a></li>
-      <li><a href="#desafios">Desafios</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#futuro">O Futuro</a></li>
-    </ul>
-  </nav>
-
-  <section id="introducao">
-    <h2>Introdução</h2>
-    <p>A tecnologia no campo está revolucionando a forma como produzimos alimentos. Com inovações como sensores, drones, inteligência artificial e conectividade rural, o agronegócio se torna mais eficiente, sustentável e produtivo.</p>
-  </section>
-
-  <section id="tecnologias">
-    <h2>Tecnologias Utilizadas</h2>
-    <ul>
-      <li>Drones agrícolas para mapeamento e pulverização</li>
-      <li>Sensores de solo e umidade</li>
-      <li>Tratores autônomos com GPS</li>
-      <li>Estufas inteligentes controladas por aplicativos</li>
-      <li>Robôs colhedores com visão computacional</li>
-      <li>Irrigação automática via IoT</li>
-      <li>Satélites para previsão climática e análise de lavouras</li>
-    </ul>
-  </section>
-
-  <section id="beneficios">
-    <h2>Benefícios da Tecnologia no Agro</h2>
-    <p>Entre os principais benefícios estão:</p>
-    <ul>
-      <li>Maior produtividade por hectare</li>
-      <li>Redução do desperdício de recursos</li>
-      <li>Preservação do meio ambiente</li>
-      <li>Monitoramento em tempo real das plantações</li>
-      <li>Tomada de decisão baseada em dados</li>
-    </ul>
-  </section>
-
-  <section id="casos">
-    <h2>Casos Reais de Sucesso</h2>
-    <p>Alguns exemplos do uso de tecnologia no campo:</p>
-    <ul>
-      <li>No Mato Grosso, drones aumentaram a produção de soja em 20%</li>
-      <li>No interior de São Paulo, sensores reduziram o uso de água em 30%</li>
-      <li>Tratores autônomos já operam em grandes fazendas no Paraná</li>
-    </ul>
-  </section>
-
-  <section id="desafios">
-    <h2>Desafios</h2>
-    <ul>
-      <li>Falta de conectividade em áreas rurais remotas</li>
-      <li>Alto custo de implementação</li>
-      <li>Necessidade de capacitação técnica</li>
-    </ul>
-  </section>
-
-  <section id="galeria">
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1581093803444-ef7c3a8f9394" alt="Drone sobre lavoura">
-      <img src="https://images.unsplash.com/photo-1598032893643-15d9e06c5414" alt="Trator autônomo">
-      <img src="https://images.unsplash.com/photo-1614315033361-d7da9d2a032c" alt="Sensores no solo">
-      <img src="https://images.unsplash.com/photo-1616627982444-2372015dc6d2" alt="Estufa inteligente">
-      <img src="https://images.unsplash.com/photo-1618326020540-c26e6a5a7cf7" alt="Análise de dados">
-      <img src="https://images.unsplash.com/photo-1621609763334-dba9b450b65b" alt="Mapa da produção agrícola">
+  <div class="gallery">
+    <div class="gallery-item" data-caption="Drone Agrícola DJI Agras T20">
+      <img src="https://cdn.dji.com/product-assets/agrass-t20/images/product/agrass-t20-intro-1.jpg" alt="Drone Agrícola DJI Agras T20" />
+      <div class="caption">DJI Agras T20</div>
     </div>
-  </section>
+    <div class="gallery-item" data-caption="Drone de Pulverização XAG P30">
+      <img src="https://www.xaerotech.com/wp-content/uploads/2020/08/p30-1.jpg" alt="Drone de Pulverização XAG P30" />
+      <div class="caption">XAG P30</div>
+    </div>
+    <div class="gallery-item" data-caption="Drone de Pulverização Yamaha RMAX">
+      <img src="https://www.yamaha-motor.com/global/technology/agri_rmax/images/01_rmax.jpg" alt="Drone de Pulverização Yamaha RMAX" />
+      <div class="caption">Yamaha RMAX</div>
+    </div>
+    <div class="gallery-item" data-caption="Drone de Pulverização DJI Agras MG-1">
+      <img src="https://cdn.dji.com/product-assets/agrass-mg1/images/product/agrass-mg1-intro-1.jpg" alt="Drone de Pulverização DJI Agras MG-1" />
+      <div class="caption">DJI Agras MG-1</div>
+    </div>
+    <div class="gallery-item" data-caption="Drone de Pulverização HSE-UAV RX-1400">
+      <img src="https://cdn.shopify.com/s/files/1/0570/5771/5022/products/RX1400_03_800x.jpg?v=1625830223" alt="Drone de Pulverização HSE-UAV RX-1400" />
+      <div class="caption">HSE-UAV RX-1400</div>
+    </div>
+    <div class="gallery-item" data-caption="Drone de Pulverização XAircraft XAG V40">
+      <img src="https://xcraft.com/media/5db/a8f/1f6/5dba8f1f6263b_optimized.jpg" alt="Drone de Pulverização XAircraft XAG V40" />
+      <div class="caption">XAircraft XAG V40</div>
+    </div>
+  </div>
 
-  <section id="futuro">
-    <h2>O Futuro do Campo</h2>
-    <p>O futuro da agricultura é inteligente, automatizado e sustentável. A tecnologia será essencial para alimentar uma população crescente e proteger os recursos naturais do planeta.</p>
-  </section>
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <img src="" alt="" id="modalImage" />
+      <div class="caption" id="modalCaption" style="padding: 15px 10px; font-size: 1.2rem;"></div>
+    </div>
+  </div>
 
-  <footer>
-    <p>Trabalho escolar sobre tecnologia no campo – Criado com 💡 e dedicação!</p>
-  </footer>
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.getElementById('closeBtn');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modalCaption.textContent = item.dataset.caption;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Fechar modal com ESC
+    window.addEventListener('keydown', e => {
+      if(e.key === "Escape" && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
