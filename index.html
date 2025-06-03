@@ -1,95 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tecnologia no Campo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f3fdf3;
-      color: #2e3b2c;
-    }
-    header {
-      background-color: #6ab04c;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    section {
-      padding: 30px;
-      max-width: 960px;
-      margin: auto;
-    }
-    h2 {
-      color: #467b3d;
-    }
-    .tech-list {
-      list-style: none;
-      padding: 0;
-    }
-    .tech-list li::before {
-      content: \"🌱 \";
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      background-color: #d7eed0;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>Tecnologia no Campo</h1>
+    <p>Conectando o Futuro à Terra</p>
+  </header>
 
-<header>
-  <h1>Tecnologia no Campo</h1>
-  <p>Conectando o Futuro à Terra</p>
-</header>
+  <nav>
+    <ul>
+      <li><a href="#introducao">Introdução</a></li>
+      <li><a href="#tecnologias">Tecnologias</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#casos">Casos Reais</a></li>
+      <li><a href="#desafios">Desafios</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#futuro">O Futuro</a></li>
+    </ul>
+  </nav>
 
-<section>
-  <h2>O Futuro da Agricultura</h2>
-  <p>A tecnologia está revolucionando a vida no campo. Do uso de satélites ao controle de irrigação por aplicativo, os produtores rurais estão cada vez mais conectados.</p>
-  
-  <ul class="tech-list">
-    <li>Drones para monitoramento de plantações</li>
-    <li>Irrigação inteligente com sensores</li>
-    <li>Tratores autônomos e GPS agrícola</li>
-    <li>Energia solar nas fazendas</li>
-    <li>Agricultura de precisão com análise de dados</li>
-  </ul>
-</section>
+  <section id="introducao">
+    <h2>Introdução</h2>
+    <p>A tecnologia no campo está revolucionando a forma como produzimos alimentos. Com inovações como sensores, drones, inteligência artificial e conectividade rural, o agronegócio se torna mais eficiente, sustentável e produtivo.</p>
+  </section>
 
-<section>
-  <h2>Galeria</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1598032893643-15d9e06c5414" alt="Trator com tecnologia">
-    <img src="https://images.unsplash.com/photo-1614315033361-d7da9d2a032c" alt="Sensor de umidade">
-    <img src="https://images.unsplash.com/photo-1581093803444-ef7c3a8f9394" alt="Drone sobre lavoura">
-  </div>
-</section>
+  <section id="tecnologias">
+    <h2>Tecnologias Utilizadas</h2>
+    <ul>
+      <li>Drones agrícolas para mapeamento e pulverização</li>
+      <li>Sensores de solo e umidade</li>
+      <li>Tratores autônomos com GPS</li>
+      <li>Estufas inteligentes controladas por aplicativos</li>
+      <li>Robôs colhedores com visão computacional</li>
+      <li>Irrigação automática via IoT</li>
+      <li>Satélites para previsão climática e análise de lavouras</li>
+    </ul>
+  </section>
 
-<footer>
-  <p>Projeto escolar sobre inovação no campo. Feito com 🌻 e muita curiosidade!</p>
-</footer>
+  <section id="beneficios">
+    <h2>Benefícios da Tecnologia no Agro</h2>
+    <p>Entre os principais benefícios estão:</p>
+    <ul>
+      <li>Maior produtividade por hectare</li>
+      <li>Redução do desperdício de recursos</li>
+      <li>Preservação do meio ambiente</li>
+      <li>Monitoramento em tempo real das plantações</li>
+      <li>Tomada de decisão baseada em dados</li>
+    </ul>
+  </section>
 
+  <section id="casos">
+    <h2>Casos Reais de Sucesso</h2>
+    <p>Alguns exemplos do uso de tecnologia no campo:</p>
+    <ul>
+      <li>No Mato Grosso, drones aumentaram a produção de soja em 20%</li>
+      <li>No interior de São Paulo, sensores reduziram o uso de água em 30%</li>
+      <li>Tratores autônomos já operam em grandes fazendas no Paraná</li>
+    </ul>
+  </section>
+
+  <section id="desafios">
+    <h2>Desafios</h2>
+    <ul>
+      <li>Falta de conectividade em áreas rurais remotas</li>
+      <li>Alto custo de implementação</li>
+      <li>Necessidade de capacitação técnica</li>
+    </ul>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Imagens</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1581093803444-ef7c3a8f9394" alt="Drone sobre lavoura">
+      <img src="https://images.unsplash.com/photo-1598032893643-15d9e06c5414" alt="Trator autônomo">
+      <img src="https://images.unsplash.com/photo-1614315033361-d7da9d2a032c" alt="Sensores no solo">
+      <img src="https://images.unsplash.com/photo-1616627982444-2372015dc6d2" alt="Estufa inteligente">
+      <img src="https://images.unsplash.com/photo-1618326020540-c26e6a5a7cf7" alt="Análise de dados">
+      <img src="https://images.unsplash.com/photo-1621609763334-dba9b450b65b" alt="Mapa da produção agrícola">
+    </div>
+  </section>
+
+  <section id="futuro">
+    <h2>O Futuro do Campo</h2>
+    <p>O futuro da agricultura é inteligente, automatizado e sustentável. A tecnologia será essencial para alimentar uma população crescente e proteger os recursos naturais do planeta.</p>
+  </section>
+
+  <footer>
+    <p>Trabalho escolar sobre tecnologia no campo – Criado com 💡 e dedicação!</p>
+  </footer>
 </body>
 </html>
