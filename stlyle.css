@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Drones de Pulverização - Página Inicial</title>
-  <style>
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f0f4f8;
@@ -257,69 +251,4 @@
         flex: 1 1 100%;
       }
     }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <ul>
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#complementos">Uso</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-
-  <header id="inicio">
-    <h1>Drones de Pulverização</h1>
-  </header>
-
-  <section id="galeria">
-    <div class="gallery">
-      <div class="gallery-item" data-caption="Drone Agrícola DJI Agras T20">
-        <img src="drone-dji-agras-t20p-removebg-preview.png" alt="Drone Agrícola DJI Agras T20" />
-        <div class="caption">DJI Agras T20</div>
-      </div>
-      <div class="gallery-item" data-caption="Drone de Pulverização XAG P30">
-        <img src="https://www.xaerotech.com/wp-content/uploads/2020/08/p30-1.jpg" alt="Drone de Pulverização XAG P30" />
-        <div class="caption">XAG P30</div>
-      </div>
-      <div class="gallery-item" data-caption="Drone de Pulverização Yamaha RMAX">
-        <img src="https://www.yamaha-motor.com/global/technology/agri_rmax/images/01_rmax.jpg" alt="Drone de Pulverização Yamaha RMAX" />
-        <div class="caption">Yamaha RMAX</div>
-      </div>
-      <div class="gallery-item" data-caption="Drone de Pulverização DJI Agras MG-1">
-        <img src="https://cdn.dji.com/product-assets/agrass-mg1/images/product/agrass-mg1-intro-1.jpg" alt="Drone de Pulverização DJI Agras MG-1" />
-        <div class="caption">DJI Agras MG-1</div>
-      </div>
-      <div class="gallery-item" data-caption="Drone de Pulverização HSE-UAV RX-1400">
-        <img src="https://cdn.shopify.com/s/files/1/0570/5771/5022/products/RX1400_03_800x.jpg?v=1625830223" alt="Drone de Pulverização HSE-UAV RX-1400" />
-        <div class="caption">HSE-UAV RX-1400</div>
-      </div>
-      <div class="gallery-item" data-caption="Drone de Pulverização XAircraft XAG V40">
-        <img src="https://xcraft.com/media/5db/a8f/1f6/5dba8f1f6263b_optimized.jpg" alt="Drone de Pulverização XAircraft XAG V40" />
-        <div class="caption">XAircraft XAG V40</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="complementos">
-    <h2>Onde e Como os Drones de Pulverização são Usados</h2>
-    
-    <div class="complementos-grid">
-      <div class="complemento-item">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Drone sobre plantação" />
-        <p class="complemento-caption">Aplicação precisa em grandes plantações</p>
-      </div>
-      <div class="complemento-item">
-        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=400&q=80" alt="Drone agrícola voando" />
-        <p class="complemento-caption">Cobertura uniforme com tecnologia GPS</p>
-      </div>
-      <div class="complemento-item">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Operador controlando drone" />
-        <p class="complemento-caption">Operação segura e rápida, reduzindo exposição</p>
-      </div>
-    </div>
-    
-  
+ 
