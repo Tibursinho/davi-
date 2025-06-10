@@ -1,335 +1,657 @@
-/* Importação das fontes Montserrat e Open Sans do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+/* Importação das fontes Poppins e Playfair Display do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 
-/* Estilos gerais e reset */
-body {
-    font-family: 'Open Sans', sans-serif;
+/* Variáveis de Cores (para fácil manutenção) */
+:root {
+    --primary-color: #28a745; /* Verde vibrante */
+    --secondary-color: #007bff; /* Azul vibrante */
+    --accent-color: #ffc107; /* Amarelo/Laranja */
+    --text-color: #343a40; /* Cinza escuro */
+    --light-bg: #f8f9fa; /* Fundo muito claro */
+    --dark-bg: #343a40; /* Fundo escuro para footer */
+    --border-color: #e9ecef; /* Cor de borda suave */
+}
+
+/* Reset básico e estilos globais */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Um cinza claro suave */
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     line-height: 1.7;
-    scroll-behavior: smooth;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo das imagens */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 25px; /* Padding nas laterais */
 }
 
-/* Cabeçalho */
-header {
-    background: linear-gradient(to right, #4CAF50, #2196F3); /* Gradiente verde-azul */
-    color: #fff;
-    padding: 80px 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
+/* Seções Padrão */
+.section-padded {
+    padding: 80px 0;
+    animation: fadeIn 1s ease-out; /* Animação básica ao carregar */
 }
 
-.header-content {
-    position: relative;
-    z-index: 1;
+.bg-light {
+    background-color: #f0f4f8; /* Um cinza-azul bem sutil */
 }
 
-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    font-size: 3.8em;
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-header p {
-    font-size: 1.4em;
-    margin-top: 15px;
-    font-weight: 300;
-    opacity: 0.9;
-}
-
-/* Conteúdo principal */
-main {
-    padding: 20px 0;
-}
-
-section {
-    background-color: #fff;
-    margin-bottom: 40px;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-
-section h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #3f51b5; /* Azul índigo */
+    color: var(--dark-bg);
     text-align: center;
-    font-size: 2.8em;
-    margin-bottom: 30px;
-    font-weight: 700;
+    margin-bottom: 20px;
     position: relative;
     padding-bottom: 15px;
 }
 
-section h2::after {
+.section-title::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 4px;
-    background-color: #ff9800; /* Laranja */
+    width: 100px;
+    height: 5px;
+    background-color: var(--accent-color);
     margin: 10px auto 0;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
-section p {
-    text-align: justify;
-    font-size: 1.15em;
-    margin-bottom: 25px;
-    max-width: 900px;
+.section-subtitle {
+    text-align: center;
+    font-size: 1.25em;
+    color: #6c757d;
+    margin-bottom: 60px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Galerias de Imagens */
-.intro-gallery, .beneficios-gallery, .desafios-gallery, .tech-gallery, .culture-gallery {
-    display: grid;
-    gap: 25px;
-    margin-top: 30px;
-    justify-items: center;
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
 }
 
-.intro-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
 }
 
-.beneficios-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.btn-primary:hover {
+    background-color: #218838; /* Verde mais escuro */
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+    transform: translateY(-2px);
 }
 
-.desafios-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+/* Hero Section (Cabeçalho principal) */
+.hero-section {
+    position: relative;
+    height: 70vh; /* Altura da viewport */
+    background: url('https://via.placeholder.com/1920x1080/4CAF50/2196F3?text=Campo+e+Cidade+Integrados') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.tech-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-.culture-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.intro-gallery img, .beneficios-gallery img, .desafios-gallery img, .tech-gallery img, .culture-gallery img {
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%; /* Garante que a imagem preencha a célula do grid */
-    object-fit: cover; /* Recorta a imagem para cobrir a área sem distorção */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Escurece a imagem de fundo */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: slideInUp 1s ease-out;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    line-height: 1.1;
+}
+
+.hero-content .subtitle {
+    font-size: 1.8em;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.15em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.about-list {
+    margin-top: 30px;
+}
+
+.about-list li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+}
+
+.about-list li i {
+    color: var(--primary-color);
+    font-size: 1.3em;
+}
+
+.about-image img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Benefits Section */
+.benefits-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+.benefit-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-bottom: 5px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.benefit-card.card-campo {
+    border-bottom-color: var(--primary-color);
+}
+
+.benefit-card.card-cidade {
+    border-bottom-color: var(--secondary-color);
+}
+
+.icon-large {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+.benefit-card.card-campo .icon-large { color: var(--primary-color); }
+.benefit-card.card-cidade .icon-large { color: var(--secondary-color); }
+
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--dark-bg);
+}
+
+.benefit-card p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.benefit-card ul {
+    text-align: left;
+    width: 100%; /* Para alinhar os itens de lista */
+}
+
+.benefit-card ul li {
+    font-size: 1.05em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.benefit-card ul li i {
+    color: var(--accent-color);
+    font-size: 1.1em;
+    margin-top: 4px; /* Ajuste para alinhar o ícone com o texto */
+}
+.benefit-card.card-campo ul li i { color: var(--primary-color); }
+.benefit-card.card-cidade ul li i { color: var(--secondary-color); }
+
+
+/* Gallery Section */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.grid-item {
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.intro-gallery img:hover, .beneficios-gallery img:hover, .desafios-gallery img:hover, .tech-gallery img:hover, .culture-gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 250px; /* Altura fixa para as imagens da galeria */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.grid-item figcaption {
+    padding: 15px;
+    font-size: 0.95em;
+    color: #555;
+    text-align: center;
+}
+
+/* Challenges & Solutions Section */
+.challenge-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.challenge-card, .solution-card {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid;
+}
+
+.challenge-card {
+    border-top-color: #dc3545; /* Vermelho para desafios */
+}
+
+.solution-card {
+    border-top-color: #28a745; /* Verde para soluções */
+}
+
+.challenge-card h3, .solution-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--dark-bg);
+}
+
+.challenge-card h3 i { color: #dc3545; margin-right: 10px; }
+.solution-card h3 i { color: #28a745; margin-right: 10px; }
+
+.challenge-card ul li, .solution-card ul li {
+    font-size: 1.05em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.challenge-card ul li i {
+    color: #dc3545;
+    font-size: 1.1em;
+    margin-top: 4px;
+}
+
+.solution-card ul li i {
+    color: #28a745;
+    font-size: 1.1em;
+    margin-top: 4px;
+}
+
+.challenges-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.challenges-gallery figure {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.challenges-gallery figure:hover {
+    transform: translateY(-5px);
+}
+.challenges-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.challenges-gallery figcaption {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.95em;
+    color: #555;
 }
 
 
-/* Seção de Benefícios (Cards) */
-.cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Future Section */
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.future-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.future-item:hover {
+    transform: translateY(-8px);
+}
+
+.icon-medium {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.future-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    color: var(--dark-bg);
+    margin-bottom: 10px;
+}
+
+.future-item p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.future-image img {
+    width: 100%;
+    height: 400px; /* Altura fixa para a imagem do futuro */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: var(--dark-bg);
+    color: #f8f9fa;
+    padding: 60px 0 30px;
+    font-size: 0.95em;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
 }
 
-.card {
-    background-color: #fefefe;
-    border-radius: 10px;
-    padding: 30px;
-    flex: 1;
-    min-width: 350px;
-    max-width: 48%; /* Para duas colunas em telas maiores */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border-left: 5px solid; /* Borda para diferenciar campo/cidade */
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.card.campo {
-    border-left-color: #8bc34a; /* Verde para campo */
-}
-
-.card.cidade {
-    border-left-color: #2196F3; /* Azul para cidade */
-}
-
-.card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    margin-top: 0;
+.footer-col h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    color: #fff;
     margin-bottom: 20px;
-    color: #444;
-}
-
-.card.campo h3 {
-    color: #689F38;
-}
-
-.card.cidade h3 {
-    color: #1976D2;
-}
-
-.card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.card ul li {
-    margin-bottom: 12px;
-    padding-left: 35px;
     position: relative;
-    font-size: 1.1em;
-    color: #555;
+}
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 8px;
+    border-radius: 2px;
 }
 
-.card ul li::before {
-    content: '⭐'; /* Ícone de estrela para lista */
-    position: absolute;
-    left: 0;
-    color: #FFC107; /* Laranja */
-    font-size: 1.2em;
+.footer-col p {
+    margin-bottom: 10px;
+    opacity: 0.8;
 }
 
-/* Lista de Soluções */
-.solutions-list {
-    margin-top: 40px;
-    background-color: #e3f2fd; /* Azul clarinho */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+.footer-col ul li {
+    margin-bottom: 8px;
 }
 
-.solutions-list h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #1976D2;
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 25px;
+.footer-col ul li a {
+    color: #f8f9fa;
+    opacity: 0.8;
 }
 
-.solutions-list ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.footer-col .social-icons {
+    margin-top: 20px;
+    display: flex;
     gap: 15px;
 }
 
-.solutions-list ul li {
-    background-color: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.2s ease;
+.footer-col .social-icons a {
+    color: #f8f9fa;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
 }
 
-.solutions-list ul li:hover {
-    background-color: #e0f7fa; /* Um azul mais claro no hover */
+.footer-col .social-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
 }
 
-.solutions-list ul li::before {
-    content: '💡'; /* Ícone de lâmpada */
-    font-size: 1.3em;
-}
-
-/* Rodapé */
-footer {
-    background-color: #34495e; /* Azul acinzentado escuro */
-    color: #fff;
+.footer-bottom {
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-    font-size: 1em;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 25px;
+    margin-top: 25px;
+    opacity: 0.7;
 }
 
-.footer-content p {
-    margin: 8px 0;
-    opacity: 0.9;
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsividade */
 @media (max-width: 992px) {
-    header h1 {
-        font-size: 3em;
+    .hero-content h1 {
+        font-size: 3.5em;
     }
-    section h2 {
-        font-size: 2.2em;
+    .hero-content .subtitle {
+        font-size: 1.5em;
     }
-    .intro-gallery {
+    .section-title {
+        font-size: 2.5em;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-image {
+        order: -1; /* Move a imagem para cima em telas menores */
+    }
+    .benefits-cards-grid {
         grid-template-columns: 1fr;
     }
-    .card {
-        max-width: 90%;
+    .challenge-solution-grid {
+        grid-template-columns: 1fr;
+    }
+    .image-grid, .challenges-gallery, .future-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .future-image img {
+        height: 300px;
     }
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5em;
+    .section-padded {
+        padding: 60px 0;
     }
-    header p {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content .subtitle {
         font-size: 1.2em;
     }
-    section h2 {
+    .section-title {
         font-size: 2em;
     }
-    .cards-wrapper {
-        flex-direction: column;
-        align-items: center;
+    .section-subtitle {
+        font-size: 1.1em;
+        margin-bottom: 40px;
     }
-    .card {
-        min-width: unset; /* Remove o min-width para telas pequenas */
-        max-width: 100%;
+    .about-text p {
+        font-size: 1em;
     }
-    .beneficios-gallery, .desafios-gallery, .tech-gallery, .culture-gallery {
+    .benefit-card {
+        padding: 30px;
+    }
+    .benefit-card h3 {
+        font-size: 1.8em;
+    }
+    .image-grid img {
+        height: 200px;
+    }
+    .challenges-gallery img {
+        height: 250px;
+    }
+    .future-image img {
+        height: 250px;
+    }
+    .footer-grid {
         grid-template-columns: 1fr;
+        text-align: center;
     }
-    .solutions-list ul {
-        grid-template-columns: 1fr;
+    .footer-col h3::after {
+        margin-left: auto;
+        margin-right: auto;
     }
-    section {
-        padding: 30px 15px;
+    .footer-col .social-icons {
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 2em;
+    .hero-content h1 {
+        font-size: 2.2em;
     }
-    header p {
+    .hero-content .subtitle {
         font-size: 1em;
     }
-    section h2 {
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .section-title {
         font-size: 1.8em;
     }
-    .card h3 {
-        font-size: 1.6em;
+    .icon-large {
+        font-size: 3em;
     }
-    .card ul li {
+    .benefit-card h3 {
+        font-size: 1.5em;
+    }
+    .benefit-card ul li {
         font-size: 0.95em;
     }
-    section p {
-        font-size: 1em;
+    .image-grid img {
+        height: 180px;
     }
 }
