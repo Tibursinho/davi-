@@ -1,423 +1,62 @@
-body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      margin: 0;
-      /* Adjusted padding to account for fixed nav bar */
-      padding: 70px 20px 20px 20px; /* Added top padding to prevent content from hiding under nav */
-      color: #333;
-      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-    }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Campo-Cidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Conexão Campo-Cidade</h1>
+        <p>Pontes que unem origens e destinos</p>
+    </header>
 
-    /* Menu de navegação */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #1a73e8;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      z-index: 10000;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      /* Added a subtle gradient */
-      background: linear-gradient(to right, #1a73e8, #2a9df4);
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 30px;
-    }
-    nav ul li {
-      font-weight: 600;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Added transform for hover effect */
-      padding: 8px 15px; /* Increased padding for better click area */
-      border-radius: 5px; /* Slightly more rounded corners */
-      display: inline-block;
-      position: relative; /* For the underline effect */
-      overflow: hidden; /* Hide overflow for underline animation */
-    }
-    nav ul li a:hover,
-    nav ul li a:focus {
-      background-color: #1565c0;
-      color: #e3f2fd;
-      outline: none;
-      transform: translateY(-2px); /* Slight lift effect on hover/focus */
-    }
-    /* Underline animation for nav items */
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #e3f2fd; /* Light blue underline */
-      transform: scaleX(0); /* Start hidden */
-      transition: transform 0.3s ease-out;
-    }
-    nav ul li a:hover::after,
-    nav ul li a:focus::after {
-      transform: scaleX(1); /* Expand on hover/focus */
-    }
+    <main>
+        <section class="introducao">
+            <h2>Onde a Natureza Encontra a Inovação</h2>
+            <p>Este projeto explora a interdependência e a sinergia entre as áreas rurais e urbanas. Da produção de alimentos à inovação tecnológica, campo e cidade estão intrinsecamente ligados, impulsionando o desenvolvimento mútuo.</p>
+        </section>
 
-    /* Espaço extra para o conteúdo por causa do nav fixo */
-    header {
-      padding-top: 60px; /* This padding can be reduced now that body has top-padding */
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    h1 {
-      color: #1a73e8;
-      margin: 0;
-      font-size: 2.8em; /* Slightly larger heading */
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
-    }
+        <section class="beneficios">
+            <div class="card campo">
+                <h3>O Campo Oferece</h3>
+                <ul>
+                    <li>Alimentos frescos e matérias-primas</li>
+                    <li>Beleza natural e ecoturismo</li>
+                    <li>Espaços para pesquisa e desenvolvimento agrícola</li>
+                    <li>Qualidade de vida e tranquilidade</li>
+                </ul>
+            </div>
+            <div class="card cidade">
+                <h3>A Cidade Proporciona</h3>
+                <ul>
+                    <li>Tecnologia e infraestrutura</li>
+                    <li>Educação e saúde avançadas</li>
+                    <li>Mercado consumidor para produtos rurais</li>
+                    <li>Oportunidades de emprego e lazer</li>
+                </ul>
+            </div>
+        </section>
 
-    /* General section styling */
-    section {
-        padding: 40px; /* Uniform padding for all main sections */
-        margin: 50px auto; /* Consistent margin for sections */
-        max-width: 1000px; /* Increased max-width for content */
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* More prominent shadow */
-        border-top: 5px solid #1a73e8; /* Accent border */
-    }
-    section h2 {
-        text-align: center;
-        color: #1a73e8;
-        font-size: 2.2em; /* Larger section titles */
-        margin-bottom: 30px;
-        position: relative;
-        padding-bottom: 10px;
-    }
-    section h2::after { /* Decorative line under section titles */
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: 80px; /* Longer line */
-        height: 4px; /* Thicker line */
-        background-color: #1a73e8;
-        border-radius: 2px;
-    }
+        <section class="galeria">
+            <h2>Visualizando a Conexão</h2>
+            <div class="imagens">
+                <img src="https://via.placeholder.com/400x250/8BC34A/FFFFFF?text=Paisagem+Rural" alt="Paisagem Rural">
+                <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Centro+Urbano" alt="Centro Urbano">
+                <img src="https://via.placeholder.com/400x250/FFC107/FFFFFF?text=Agricultura+Tecnologica" alt="Agricultura Tecnológica">
+                <img src="https://via.placeholder.com/400x250/9C27B0/FFFFFF?text=Mercado+Local" alt="Mercado Local">
+            </div>
+            <p class="legenda">Imagens ilustrativas da relação entre campo e cidade.</p>
+        </section>
+    </main>
 
-    /* Gallery styles */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider min width */
-      gap: 25px; /* Increased gap */
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .gallery-item {
-      background: white;
-      border-radius: 10px; /* Slightly more rounded */
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Stronger initial shadow */
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transitions */
-      border: 1px solid #e0e0e0; /* Subtle border */
-    }
-    .gallery-item:hover {
-      transform: translateY(-8px); /* More pronounced lift effect */
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-    }
-    .gallery-item img {
-      width: 100%;
-      display: block;
-      height: 200px; /* Slightly taller images */
-      object-fit: cover;
-    }
-    .caption {
-      padding: 15px 15px; /* Increased padding */
-      font-weight: 600;
-      font-size: 1.1rem; /* Slightly larger font */
-      text-align: center;
-      background: #f9fafb;
-      color: #444; /* Darker text for better readability */
-      border-top: 1px solid #eee; /* Separator line */
-    }
-
-    /* Modal */
-    .modal {
-      display: none; /* hidden by default */
-      position: fixed;
-      z-index: 10001; /* Higher z-index than nav */
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8); /* Darker overlay */
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      backdrop-filter: blur(8px); /* Stronger blur effect */
-    }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px; /* More rounded corners */
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Stronger shadow */
-      animation: fadeInScale 0.4s ease forwards; /* Slightly longer animation */
-      position: relative;
-      background: #fff;
-      padding: 15px; /* Padding inside modal content for image/caption */
-    }
-    .modal-content img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px; /* Rounded corners for image inside modal */
-      max-height: 75vh; /* Allow image to be a bit taller */
-      object-fit: contain;
-    }
-    .modal .caption { /* Specific style for modal caption */
-        background: none; /* No background for modal caption */
-        border-top: none; /* No border for modal caption */
-        font-size: 1.3rem; /* Larger font for modal caption */
-        margin-top: 10px; /* Space between image and caption */
-    }
-    .close-btn {
-      position: absolute;
-      top: 15px; /* Adjusted position */
-      right: 20px; /* Adjusted position */
-      font-size: 36px; /* Larger close button */
-      font-weight: bold;
-      color: #f0f0f0; /* Lighter color for better visibility */
-      text-shadow: 0 0 8px rgba(0,0,0,0.7); /* Stronger text shadow */
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
-    .close-btn:hover {
-      color: #ff6b6b; /* More vibrant red on hover */
-      transform: rotate(90deg); /* Rotate effect on hover */
-    }
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.7); /* Starts from a smaller scale */
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* Complementos - (using generic section styles above, but specific grid and card styling) */
-    .complementos-grid { /* Renamed from #complementos .complementos-grid to be generic */
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px; /* Consistent gap */
-      margin-top: 20px;
-    }
-    .complemento-item { /* Renamed from #complementos .complemento-item to be generic */
-      background: #fdfdfd; /* Lighter background for cards */
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Stronger shadow */
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid #eee;
-    }
-    .complemento-item:hover {
-      transform: translateY(-5px); /* Lift effect */
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Stronger shadow on hover */
-    }
-    .complemento-item img {
-      width: 100%;
-      height: 200px; /* Consistent image height with gallery */
-      object-fit: cover;
-      border-bottom: 3px solid #e0e0e0; /* Subtle border */
-    }
-    .complemento-caption { /* Renamed from #complementos .complemento-caption to be generic */
-      padding: 15px;
-      font-weight: 600;
-      color: #333;
-      font-size: 1.05rem;
-    }
-
-    /* Sobre Section */
-    #sobre p {
-      line-height: 1.7; /* Increased line height for readability */
-      font-size: 1.15rem; /* Slightly larger text */
-      color: #444;
-      text-align: justify;
-    }
-
-    /* Contato Section */
-    #contato {
-      max-width: 700px; /* Slightly wider form */
-    }
-    #contato form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px; /* More space between form fields */
-      background: #fefefe;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      border: 1px solid #eee;
-    }
-    #contato label {
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 5px; /* Space between label and input */
-        display: block; /* Ensures label takes full width */
-    }
-    #contato input, #contato textarea {
-      padding: 12px 15px; /* More padding for inputs */
-      font-size: 1.05rem; /* Slightly larger font in inputs */
-      border-radius: 6px; /* More rounded input fields */
-      border: 1px solid #d0d0d0; /* Lighter border */
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    #contato input:focus, #contato textarea:focus {
-        border-color: #1a73e8; /* Blue border on focus */
-        box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2); /* Soft blue glow on focus */
-        outline: none; /* Remove default outline */
-    }
-    #contato textarea {
-      resize: vertical;
-      min-height: 120px; /* Minimum height for textarea */
-    }
-    #contato button {
-      padding: 14px 20px; /* Larger button */
-      background-color: #1a73e8;
-      color: white;
-      font-weight: 700; /* Bolder text */
-      font-size: 1.1rem; /* Larger font */
-      border: none;
-      border-radius: 8px; /* More rounded button */
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      letter-spacing: 0.5px; /* Subtle letter spacing */
-    }
-    #contato button:hover {
-      background-color: #1565c0;
-      transform: translateY(-2px); /* Lift effect */
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow on hover */
-    }
-
-    /* Footer - Added a basic footer */
-    footer {
-        text-align: center;
-        padding: 30px 20px;
-        margin-top: 60px;
-        background-color: #1a73e8;
-        color: white;
-        font-size: 0.9rem;
-        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-    }
-    footer a {
-        color: #e3f2fd;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    footer a:hover {
-        color: #fff;
-    }
-
-    /* Media Queries for Responsiveness */
-    @media (max-width: 768px) {
-      body {
-        padding: 60px 15px 15px 15px; /* Adjust padding for smaller screens */
-      }
-      h1 {
-        font-size: 2.2em;
-      }
-      nav ul {
-        gap: 20px;
-      }
-      nav ul li a {
-        font-size: 0.95rem;
-        padding: 6px 10px;
-      }
-      section {
-        padding: 30px 20px; /* Reduce section padding */
-        margin: 40px auto;
-      }
-      section h2 {
-        font-size: 1.8em;
-      }
-      .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Smaller min-width for gallery items */
-        gap: 15px;
-      }
-      .gallery-item img, .complemento-item img {
-        height: 160px; /* Reduce image height */
-      }
-      .caption {
-        font-size: 1rem;
-      }
-      .modal-content {
-        max-width: 95%;
-        max-height: 95%;
-      }
-      .close-btn {
-        font-size: 30px;
-        top: 10px;
-        right: 15px;
-      }
-      #contato form {
-        padding: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 55px 10px 10px 10px; /* Even smaller padding */
-      }
-      h1 {
-        font-size: 2em;
-      }
-      nav ul {
-        flex-wrap: wrap; /* Allow nav items to wrap */
-        justify-content: center;
-        gap: 10px; /* Smaller gap */
-      }
-      nav ul li a {
-        font-size: 0.85rem;
-        padding: 5px 8px;
-      }
-      section {
-        padding: 25px 15px;
-        margin: 30px auto;
-      }
-      section h2 {
-        font-size: 1.6em;
-        margin-bottom: 20px;
-      }
-      section h2::after {
-        width: 50px;
-        height: 3px;
-      }
-      .gallery, .complementos-grid {
-        grid-template-columns: 1fr; /* Single column layout on very small screens */
-      }
-      .gallery-item img, .complemento-item img {
-        height: 140px;
-      }
-      .caption {
-        font-size: 0.95rem;
-      }
-      .modal .caption {
-        font-size: 1.1rem;
-      }
-      #sobre p, #contato input, #contato textarea {
-        font-size: 1rem;
-      }
-      #contato button {
-        font-size: 1rem;
-        padding: 10px 15px;
-      }
-    }
+    <footer>
+        <p>&copy; 2025 Projeto Conexão Campo-Cidade. Todos os direitos reservados.</p>
+        <p>Desenvolvido com ❤️ para a comunidade.</p>
+    </footer>
+</body>
+</html>
