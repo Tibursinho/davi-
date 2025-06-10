@@ -1,229 +1,973 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexão Campo-Cidade: Pontes para um Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-            <h1>Conectando Horizontes: Campo & Cidade</h1>
-            <p class="subtitle">A teia invisível que nutre o progresso e a vida</p>
-            <a href="#about" class="btn btn-primary">Saiba Mais <i class="fas fa-arrow-down"></i></a>
-        </div>
-    </header>
+/* Importação das fontes Poppins e Playfair Display do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 
-    <main>
-        <section id="about" class="section-padded about-section">
-            <div class="container">
-                <h2 class="section-title">Nossa Jornada de Interdependência</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>A relação entre o <strong>campo</strong> e a <strong>cidade</strong> é uma força motriz fundamental para o desenvolvimento global. Mais do que apenas polos geográficos, eles representam ecossistemas complementares que se alimentam mutuamente, impulsionando a economia, a cultura e a inovação.</p>
-                        <p>No cerne desta conexão, encontramos a **produção de alimentos** que sustenta as populações urbanas e a **inovação tecnológica** que otimiza a vida rural. Este site é um tributo a essa sinergia vital, explorando seus pilares, desafios e o futuro que construímos juntos.</p>
-                        <ul class="about-list">
-                            <li><i class="fas fa-leaf"></i> Produção Sustentável de Alimentos</li>
-                            <li><i class="fas fa-building"></i> Desenvolvimento Urbano Integrado</li>
-                            <li><i class="fas fa-hands-helping"></i> Sinergia Econômica e Social</li>
-                            <li><i class="fas fa-chart-line"></i> Inovação e Crescimento Mútuo</li>
-                        </ul>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://via.placeholder.com/700x500/A8DADC/2C3E50?text=Harmonia+Campo-Cidade" alt="Ilustração da harmonia entre campo e cidade">
-                    </div>
-                </div>
-            </div>
-        </section>
+/* Variáveis de Cores (para fácil manutenção) */
+:root {
+    --primary-color: #28a745; /* Verde vibrante */
+    --secondary-color: #007bff; /* Azul vibrante */
+    --accent-color: #ffc107; /* Amarelo/Laranja */
+    --text-color: #343a40; /* Cinza escuro */
+    --light-bg: #f8f9fa; /* Fundo muito claro */
+    --dark-bg: #212529; /* Fundo escuro quase preto */
+    --border-color: #e9ecef; /* Cor de borda suave */
+    --shadow-light: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-medium: 0 8px 25px rgba(0,0,0,0.12);
+}
 
-        <section id="benefits" class="section-padded benefits-section bg-light">
-            <div class="container">
-                <h2 class="section-title">Os Pilares da Conexão: Campo e Cidade</h2>
-                <div class="benefits-cards-grid">
-                    <div class="benefit-card card-campo">
-                        <i class="fas fa-tractor icon-large"></i>
-                        <h3>O Campo: Essência e Sustento</h3>
-                        <p>Fornece os recursos naturais que alimentam a vida e a indústria urbana. É o berço da biodiversidade, guardião das tradições e provedor de serviços ecossistêmicos indispensáveis.</p>
-                        <ul>
-                            <li><i class="fas fa-seedling"></i> Alimentos Frescos e Matérias-Primas</li>
-                            <li><i class="fas fa-tint"></i> Água Pura e Ar Limpo</li>
-                            <li><i class="fas fa-tree"></i> Ecoturismo e Lazer na Natureza</li>
-                            <li><i class="fas fa-globe-americas"></i> Preservação Cultural e Tradições</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-card card-cidade">
-                        <i class="fas fa-city icon-large"></i>
-                        <h3>A Cidade: Inovação e Oportunidade</h3>
-                        <p>É o centro do conhecimento, da tecnologia e do consumo. Transforma matérias-primas, oferece infraestrutura avançada e gera inovações que retroalimentam o desenvolvimento rural.</p>
-                        <ul>
-                            <li><i class="fas fa-laptop-code"></i> Tecnologia e Pesquisa Avançada</li>
-                            <li><i class="fas fa-hospital"></i> Saúde e Educação de Ponta</li>
-                            <li><i class="fas fa-store"></i> Grande Mercado Consumidor</li>
-                            <li><i class="fas fa-briefcase"></i> Diversidade de Oportunidades</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        <section id="gallery" class="section-padded gallery-section">
-            <div class="container">
-                <h2 class="section-title">Galeria: Vislumbres da Interdependência</h2>
-                <p class="section-subtitle">Uma coleção de momentos que ilustram a rica relação entre o ambiente rural e o urbano.</p>
-                <div class="image-grid">
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/81C784/FFFFFF?text=Lavoura+Tecnológica" alt="Lavoura com tecnologia de ponta">
-                        <figcaption>Agricultura de precisão impulsionando a produtividade.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/64B5F6/FFFFFF?text=Skyline+Urbano" alt="Skyline de uma grande cidade ao anoitecer">
-                        <figcaption>As luzes da metrópole, um polo de inovação.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/FFB74D/FFFFFF?text=Feira+Organica" alt="Feira orgânica com produtos frescos do campo">
-                        <figcaption>A vitalidade do campo chegando às mesas urbanas.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/AED581/FFFFFF?text=Rio+Limpo+e+Campo" alt="Rio limpo fluindo através de campos verdes">
-                        <figcaption>Recursos hídricos protegidos pela natureza.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/4DD0E1/FFFFFF?text=Startup+Agro" alt="Pessoas trabalhando em uma startup de tecnologia agrícola">
-                        <figcaption>Inovação urbana a serviço do agronegócio.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/FF8A65/FFFFFF?text=Transporte+Alimentos" alt="Caminhão transportando alimentos da fazenda para a cidade">
-                        <figcaption>A logística eficiente que conecta produtores e consumidores.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/BA68C8/FFFFFF?text=Turismo+Rural" alt="Turistas desfrutando de uma paisagem rural">
-                        <figcaption>O campo como destino de relaxamento e aprendizado.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/90A4AE/FFFFFF?text=Energia+Sustentavel" alt="Painéis solares em uma fazenda">
-                        <figcaption>Soluções energéticas limpas beneficiando o campo.</figcaption>
-                    </figure>
-                    <figure class="grid-item">
-                        <img src="https://via.placeholder.com/800x600/7986CB/FFFFFF?text=Educacao+Rural" alt="Crianças em uma escola rural com tecnologia">
-                        <figcaption>O acesso à educação e informação no campo.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    -webkit-font-smoothing: antialiased; /* Melhor renderização de fontes */
+    -moz-osx-font-smoothing: grayscale;
+}
 
-        <section id="challenges-solutions" class="section-padded challenges-section bg-light">
-            <div class="container">
-                <h2 class="section-title">Desafios e Soluções: Rumo à Sustentabilidade</h2>
-                <p class="section-subtitle">Identificando obstáculos e desenvolvendo estratégias para fortalecer ainda mais essa relação vital.</p>
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
 
-                <div class="challenge-solution-grid">
-                    <div class="challenge-card">
-                        <h3><i class="fas fa-exclamation-triangle"></i> Desafios Atuais</h3>
-                        <ul>
-                            <li><i class="fas fa-minus-circle"></i> Êxodo Rural e Envelhecimento da População Agrícola</li>
-                            <li><i class="fas fa-cloud-sun-rain"></i> Impactos das Mudanças Climáticas na Produção</li>
-                            <li><i class="fas fa-recycle"></i> Gestão de Resíduos e Poluição Urbana e Rural</li>
-                            <li><i class="fas fa-road"></i> Infraestrutura Precária em Algumas Áreas Rurais</li>
-                            <li><i class="fas fa-dollar-sign"></i> Disparidades Socioeconômicas</li>
-                        </ul>
-                    </div>
-                    <div class="solution-card">
-                        <h3><i class="fas fa-lightbulb"></i> Soluções Estratégicas</h3>
-                        <ul>
-                            <li><i class="fas fa-award"></i> Incentivo à Agricultura Familiar e Agroecologia</li>
-                            <li><i class="fas fa-seedling"></i> Investimento em Tecnologias Sustentáveis e ESG</li>
-                            <li><i class="fas fa-train"></i> Melhoria da Logística e Acesso a Mercados</li>
-                            <li><i class="fas fa-graduation-cap"></i> Educação e Capacitação Contínuas</li>
-                            <li><i class="fas fa-handshake"></i> Políticas Públicas Integradas</li>
-                        </ul>
-                    </div>
-                </div>
+a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
 
-                <div class="challenges-gallery">
-                    <figure>
-                        <img src="https://via.placeholder.com/600x400/EF5350/FFFFFF?text=Seca+e+Desertificacao" alt="Paisagem afetada pela seca e desertificação">
-                        <figcaption>O impacto das mudanças climáticas no campo.</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="https://via.placeholder.com/600x400/66BB6A/FFFFFF?text=Replantio+e+Recuperacao" alt="Pessoas replantando árvores para recuperação ambiental">
-                        <figcaption>Esforços de reflorestamento e recuperação.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
+ul {
+    list-style: none;
+}
 
-        <section id="future" class="section-padded future-section">
-            <div class="container">
-                <h2 class="section-title">O Futuro Conectado: Inovação e Sustentabilidade</h2>
-                <p class="section-subtitle">Avançamos para um cenário onde a colaboração entre campo e cidade é a chave para um planeta mais próspero e equitativo.</p>
-                <div class="future-grid">
-                    <div class="future-item">
-                        <i class="fas fa-robot icon-medium"></i>
-                        <h3>Agricultura 4.0</h3>
-                        <p>Uso de inteligência artificial, IoT e robótica para otimizar a produção e reduzir o impacto ambiental.</p>
-                    </div>
-                    <div class="future-item">
-                        <i class="fas fa-tree icon-medium"></i>
-                        <h3>Cidades Verdes</h3>
-                        <p>Integração de áreas verdes, hortas urbanas e arquitetura sustentável nas metrópoles.</p>
-                    </div>
-                    <div class="future-item">
-                        <i class="fas fa-network-wired icon-medium"></i>
-                        <h3>Cadeias de Valor Digitais</h3>
-                        <p>Rastreabilidade e transparência da fazenda à mesa, beneficiando produtores e consumidores.</p>
-                    </div>
-                    <div class="future-item">
-                        <i class="fas fa-users-cog icon-medium"></i>
-                        <h3>Comunidades Resilientes</h3>
-                        <p>Fortalecimento das capacidades locais para enfrentar desafios climáticos e sociais.</p>
-                    </div>
-                </div>
-                <div class="future-image">
-                    <img src="https://via.placeholder.com/1000x500/4CAF50/FFFFFF?text=Futuro+Sustentavel" alt="Representação de um futuro sustentável com integração campo-cidade">
-                </div>
-            </div>
-        </section>
-    </main>
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo das imagens */
+    border-radius: 8px; /* Bordas arredondadas para todas as imagens */
+}
 
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Sobre o Projeto</h3>
-                    <p>Dedicado a explorar e promover a interdependência e a sinergia entre o campo e a cidade, visando um desenvolvimento mais equilibrado e sustentável.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Links Rápidos</h3>
-                    <ul>
-                        <li><a href="#about">Quem Somos</a></li>
-                        <li><a href="#benefits">Benefícios</a></li>
-                        <li><a href="#gallery">Galeria</a></li>
-                        <li><a href="#challenges-solutions">Desafios</a></li>
-                        <li><a href="#future">O Futuro</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Contato</h3>
-                    <p><i class="fas fa-envelope"></i> contato@conexaocampocidade.com</p>
-                    <p><i class="fas fa-phone"></i> +55 (XX) XXXX-XXXX</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Conexão Campo-Cidade. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px; /* Padding nas laterais */
+}
+
+/* Seções Padrão */
+.section-padded {
+    padding: 100px 0; /* Aumentado o padding das seções */
+    animation: fadeIn 1s ease-out; /* Animação básica ao carregar */
+}
+
+.bg-light {
+    background-color: #edf2f7; /* Um cinza-azul bem sutil */
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8em; /* Títulos maiores */
+    font-weight: 700;
+    color: var(--dark-bg);
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 120px; /* Linha maior */
+    height: 6px; /* Linha mais grossa */
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.35em; /* Subtítulos maiores */
+    color: #6c757d;
+    margin-bottom: 70px; /* Mais espaço */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 18px 35px; /* Botões maiores */
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.15em; /* Texto maior */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 7px 20px rgba(40, 167, 69, 0.4); /* Sombra mais pronunciada */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Verde mais escuro */
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.5);
+    transform: translateY(-3px); /* Animação mais suave */
+}
+
+.btn-link {
+    background: none;
+    color: var(--secondary-color);
+    padding: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-link:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+
+/* Hero Section (Cabeçalho principal) */
+.hero-section {
+    position: relative;
+    height: 85vh; /* Altura da viewport aumentada */
+    background: url('https://via.placeholder.com/1920x1080/4CAF50/2196F3?text=Campo+e+Cidade+Integrados+Full') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Escurece mais a imagem de fundo */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: slideInUp 1.2s ease-out; /* Animação mais longa */
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5em; /* Título gigante */
+    margin-bottom: 25px;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    line-height: 1.1;
+}
+
+.hero-content .subtitle {
+    font-size: 2.1em; /* Subtítulo maior */
+    font-weight: 300;
+    margin-bottom: 50px;
+    opacity: 0.9;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Ajuste na proporção */
+    gap: 60px; /* Mais espaço entre as colunas */
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.2em; /* Texto maior */
+    margin-bottom: 25px;
+    line-height: 1.9;
+    color: #495057;
+}
+.about-text p strong {
+    color: var(--primary-color);
+}
+
+.about-list {
+    margin-top: 40px;
+}
+
+.about-list li {
+    font-size: 1.15em; /* Texto da lista maior */
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-color);
+}
+
+.about-list li i {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-top: 3px;
+}
+.about-list li strong {
+    color: var(--secondary-color);
+}
+
+.about-image img {
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Sombra mais forte */
+}
+.about-image figcaption {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.95em;
+}
+
+.about-note {
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 60px;
+    color: #5a6268;
+    background-color: #e2e8f0;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+
+/* Benefits Section */
+.benefits-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); /* Cards maiores */
+    gap: 50px; /* Mais espaço entre os cards */
+    justify-content: center;
+}
+
+.benefit-card {
+    background-color: #fff;
+    border-radius: 15px; /* Mais arredondado */
+    padding: 45px; /* Mais padding */
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    border-bottom: 6px solid; /* Borda mais grossa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-15px); /* Mais destaque no hover */
+    box-shadow: var(--shadow-medium);
+}
+
+.benefit-card.card-campo {
+    border-bottom-color: var(--primary-color);
+}
+
+.benefit-card.card-cidade {
+    border-bottom-color: var(--secondary-color);
+}
+
+.icon-large {
+    font-size: 4em; /* Ícones maiores */
+    margin-bottom: 30px;
+    animation: bounceIn 0.8s ease-out; /* Animação ao carregar */
+}
+.benefit-card.card-campo .icon-large { color: var(--primary-color); }
+.benefit-card.card-cidade .icon-large { color: var(--secondary-color); }
+
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em; /* Títulos de card maiores */
+    margin-bottom: 25px;
+    color: var(--dark-bg);
+}
+
+.benefit-card p {
+    font-size: 1.15em;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.benefit-card ul {
+    text-align: left;
+    width: 100%;
+}
+
+.benefit-card ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.benefit-card ul li i {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    margin-top: 4px;
+}
+.benefit-card.card-campo ul li i { color: var(--primary-color); }
+.benefit-card.card-cidade ul li i { color: var(--secondary-color); }
+
+.benefits-gallery {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Gallery Section */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px; /* Mais espaço entre as imagens */
+    margin-top: 50px;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 280px; /* Altura fixa maior para as imagens da galeria */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.08); /* Zoom maior no hover */
+}
+
+.grid-item figcaption {
+    padding: 18px; /* Mais padding */
+    font-size: 1.0em; /* Texto maior */
+    color: #555;
+    text-align: center;
+    background-color: #fcfcfc;
+}
+
+.gallery-note {
+    text-align: center;
+    font-size: 1.15em;
+    font-style: italic;
+    margin-top: 70px;
+    color: #6c757d;
+    padding: 25px;
+    background-color: #eaf5ff;
+    border-radius: 10px;
+    border-right: 5px solid var(--secondary-color);
+}
+
+/* Challenges & Solutions Section */
+.challenge-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Colunas maiores */
+    gap: 50px; /* Mais espaço */
+    margin-bottom: 70px;
+}
+
+.challenge-card, .solution-card {
+    background-color: #fff;
+    padding: 40px; /* Mais padding */
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    border-top: 6px solid; /* Borda mais grossa */
+    transition: transform 0.3s ease;
+}
+.challenge-card:hover, .solution-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.challenge-card {
+    border-top-color: #dc3545; /* Vermelho para desafios */
+}
+
+.solution-card {
+    border-top-color: #28a745; /* Verde para soluções */
+}
+
+.challenge-card h3, .solution-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em; /* Títulos maiores */
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--dark-bg);
+}
+
+.challenge-card h3 i { color: #dc3545; margin-right: 15px; }
+.solution-card h3 i { color: #28a745; margin-right: 15px; }
+
+.challenge-card ul li, .solution-card ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.6;
+}
+
+.challenge-card ul li i {
+    color: #dc3545;
+    font-size: 1.2em;
+    margin-top: 4px;
+}
+
+.solution-card ul li i {
+    color: #28a745;
+    font-size: 1.2em;
+    margin-top: 4px;
+}
+
+.challenges-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+.challenges-gallery figure {
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease;
+}
+.challenges-gallery figure:hover {
+    transform: translateY(-5px);
+}
+.challenges-gallery img {
+    height: 320px;
+}
+.challenges-gallery figcaption {
+    padding: 18px;
+    font-size: 1em;
+}
+.challenges-note {
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 60px;
+    color: #6c757d;
+}
+
+/* Stories Section */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.story-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.story-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 4px solid var(--accent-color);
+}
+
+.story-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.story-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.story-card span {
+    display: block;
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+}
+.story-card span i {
+    margin-right: 5px;
+    color: var(--secondary-color);
+}
+.stories-note {
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 60px;
+    color: #6c757d;
+}
+
+
+/* Resources Section */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.resource-card {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.resource-card .icon-small {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.resource-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7em;
+    color: var(--dark-bg);
+    margin-bottom: 15px;
+}
+
+.resource-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #fff;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Formulário um pouco maior */
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.contact-info h3, .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: var(--dark-bg);
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.contact-info p i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.social-icons-contact {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+.social-icons-contact a {
+    color: var(--dark-bg);
+    font-size: 1.8em;
+}
+.social-icons-contact a:hover {
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #495057;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.contact-form .btn-primary {
+    width: auto;
+    padding: 15px 30px;
+    font-size: 1.05em;
+}
+
+
+/* Footer Section */
+.footer-section {
+    background-color: var(--dark-bg);
+    color: #f8f9fa;
+    padding: 80px 0 40px; /* Mais padding */
+    font-size: 0.98em;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas maiores */
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-col h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em; /* Títulos maiores */
+    color: #fff;
+    margin-bottom: 25px;
+    position: relative;
+}
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 60px; /* Linha maior */
+    height: 4px; /* Linha mais grossa */
+    background-color: var(--accent-color);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.footer-col p {
+    margin-bottom: 12px;
+    opacity: 0.85;
+    line-height: 1.7;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #f8f9fa;
+    opacity: 0.85;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+}
+.newsletter-form input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+.newsletter-form button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+.newsletter-form button:hover {
+    background-color: #218838;
+}
+
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #f8f9fa;
+    font-size: 1.7em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: scale(1.15);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 30px;
+    margin-top: 30px;
+    opacity: 0.8;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.1); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 4.5em;
+    }
+    .hero-content .subtitle {
+        font-size: 1.8em;
+    }
+    .section-title {
+        font-size: 3.2em;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-padded {
+        padding: 80px 0;
+    }
+    .hero-content h1 {
+        font-size: 3.5em;
+    }
+    .hero-content .subtitle {
+        font-size: 1.4em;
+    }
+    .section-title {
+        font-size: 2.8em;
+    }
+    .section-subtitle {
+        font-size: 1.2em;
+        margin-bottom: 50px;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-image {
+        order: -1; /* Move a imagem para cima em telas menores */
+    }
+    .about-list {
+        text-align: left; /* Mantém alinhamento da lista */
+    }
+    .benefits-cards-grid {
+        grid-template-columns: 1fr; /* Uma coluna para cards */
+    }
+    .benefit-card {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .challenge-solution-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-info, .contact-form {
+        text-align: center;
+    }
+    .contact-info p {
+        justify-content: center;
+    }
+    .social-icons-contact {
+        justify-content: center;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col h3::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .newsletter-form {
+        justify-content: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padded {
+        padding: 60px 0;
+    }
+    .hero-section {
+        height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content .subtitle {
+        font-size: 1.1em;
+    }
+    .section-title {
+        font-size: 2.2em;
+    }
+    .section-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .about-text p, .about-list li {
+        font-size: 1em;
+    }
+    .icon-large {
+        font-size: 3em;
+    }
+    .benefit-card h3 {
+        font-size: 2em;
+    }
+    .benefit-card p, .benefit-card ul li {
+        font-size: 1em;
+    }
+    .image-grid, .benefits-gallery, .challenges-gallery, .story-grid, .resources-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    .grid-item img {
+        height: 220px;
+    }
+    .challenges-gallery img {
+        height: 200px;
+    }
+    .future-image img {
+        height: 250px;
+    }
+    .story-card img {
+        width: 100px;
+        height: 100px;
+    }
+    .story-card h3 {
+        font-size: 1.4em;
+    }
+    .resource-card .icon-small {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content .subtitle {
+        font-size: 0.9em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+    .section-subtitle {
+        font-size: 0.9em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .benefit-card, .challenge-card, .solution-card, .story-card, .resource-card {
+        padding: 25px;
+    }
+    .image-grid img {
+        height: 180px;
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 12px;
+    }
+}
