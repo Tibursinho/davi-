@@ -1,14 +1,15 @@
-/* Importação da fonte Roboto do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+/* Importação das fontes Montserrat e Open Sans do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
 
-/* Estilos gerais */
+/* Estilos gerais e reset */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f2f5; /* Um cinza claro suave */
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -19,98 +20,169 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #2c3e50; /* Azul escuro */
+    background: linear-gradient(to right, #4CAF50, #2196F3); /* Gradiente verde-azul */
     color: #fff;
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    font-size: 3em;
+    font-size: 3.8em;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.4em;
+    margin-top: 15px;
     font-weight: 300;
+    opacity: 0.9;
 }
 
 /* Conteúdo principal */
 main {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    padding: 20px 0;
 }
 
 section {
+    background-color: #fff;
     margin-bottom: 40px;
-    padding: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-section:last-child {
-    border-bottom: none;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 section h2 {
-    color: #2980b9; /* Azul vibrante */
+    font-family: 'Montserrat', sans-serif;
+    color: #3f51b5; /* Azul índigo */
     text-align: center;
-    font-size: 2.2em;
-    margin-bottom: 25px;
+    font-size: 2.8em;
+    margin-bottom: 30px;
     font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #ff9800; /* Laranja */
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 section p {
     text-align: justify;
-    font-size: 1.1em;
-    margin-bottom: 15px;
+    font-size: 1.15em;
+    margin-bottom: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Galerias de Imagens */
+.intro-gallery, .beneficios-gallery, .desafios-gallery, .tech-gallery, .culture-gallery {
+    display: grid;
+    gap: 25px;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.intro-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.beneficios-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.desafios-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.tech-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.culture-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.intro-gallery img, .beneficios-gallery img, .desafios-gallery img, .tech-gallery img, .culture-gallery img {
+    width: 100%;
+    height: 100%; /* Garante que a imagem preencha a célula do grid */
+    object-fit: cover; /* Recorta a imagem para cobrir a área sem distorção */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.intro-gallery img:hover, .beneficios-gallery img:hover, .desafios-gallery img:hover, .tech-gallery img:hover, .culture-gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
 /* Seção de Benefícios (Cards) */
-.beneficios {
+.cards-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
-    text-align: left;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
 .card {
-    background-color: #ecf0f1; /* Cinza claro */
-    border-radius: 8px;
-    padding: 25px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 30px;
     flex: 1;
-    min-width: 300px;
-    max-width: 45%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+    min-width: 350px;
+    max-width: 48%; /* Para duas colunas em telas maiores */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-left: 5px solid; /* Borda para diferenciar campo/cidade */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card.campo {
+    border-left-color: #8bc34a; /* Verde para campo */
+}
+
+.card.cidade {
+    border-left-color: #2196F3; /* Azul para cidade */
 }
 
 .card h3 {
-    color: #34495e; /* Azul acinzentado */
-    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
     margin-top: 0;
     margin-bottom: 20px;
-    border-bottom: 2px solid #bdc3c7;
-    padding-bottom: 10px;
+    color: #444;
 }
 
 .card.campo h3 {
-    color: #27ae60; /* Verde */
+    color: #689F38;
 }
 
 .card.cidade h3 {
-    color: #3498db; /* Azul */
+    color: #1976D2;
 }
 
 .card ul {
@@ -119,79 +191,125 @@ section p {
 }
 
 .card ul li {
-    margin-bottom: 10px;
-    padding-left: 25px;
+    margin-bottom: 12px;
+    padding-left: 35px;
     position: relative;
-    font-size: 1.05em;
+    font-size: 1.1em;
+    color: #555;
 }
 
 .card ul li::before {
-    content: '✅'; /* Ícone de check */
+    content: '⭐'; /* Ícone de estrela para lista */
     position: absolute;
     left: 0;
-    color: #2ecc71; /* Verde */
+    color: #FFC107; /* Laranja */
+    font-size: 1.2em;
 }
 
-/* Seção Galeria */
-.galeria .imagens {
+/* Lista de Soluções */
+.solutions-list {
+    margin-top: 40px;
+    background-color: #e3f2fd; /* Azul clarinho */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.solutions-list h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1976D2;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.solutions-list ul {
+    list-style: none;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin-top: 30px;
+    gap: 15px;
 }
 
-.galeria img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.solutions-list ul li {
+    background-color: #fff;
+    padding: 15px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease;
 }
 
-.galeria img:hover {
-    transform: scale(1.03);
+.solutions-list ul li:hover {
+    background-color: #e0f7fa; /* Um azul mais claro no hover */
 }
 
-.galeria .legenda {
-    text-align: center;
-    margin-top: 20px;
-    font-style: italic;
-    color: #666;
+.solutions-list ul li::before {
+    content: '💡'; /* Ícone de lâmpada */
+    font-size: 1.3em;
 }
 
 /* Rodapé */
 footer {
-    background-color: #34495e; /* Azul acinzentado */
+    background-color: #34495e; /* Azul acinzentado escuro */
     color: #fff;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
-    font-size: 0.9em;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-size: 1em;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
 }
 
-footer p {
-    margin: 5px 0;
+.footer-content p {
+    margin: 8px 0;
+    opacity: 0.9;
 }
 
 /* Responsividade */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 3em;
+    }
+    section h2 {
+        font-size: 2.2em;
+    }
+    .intro-gallery {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        max-width: 90%;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5em;
     }
-
-    .beneficios {
+    header p {
+        font-size: 1.2em;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+    .cards-wrapper {
         flex-direction: column;
         align-items: center;
     }
-
     .card {
-        max-width: 90%;
+        min-width: unset; /* Remove o min-width para telas pequenas */
+        max-width: 100%;
     }
-
-    .galeria .imagens {
+    .beneficios-gallery, .desafios-gallery, .tech-gallery, .culture-gallery {
         grid-template-columns: 1fr;
+    }
+    .solutions-list ul {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 30px 15px;
     }
 }
 
@@ -206,6 +324,12 @@ footer p {
         font-size: 1.8em;
     }
     .card h3 {
-        font-size: 1.5em;
+        font-size: 1.6em;
+    }
+    .card ul li {
+        font-size: 0.95em;
+    }
+    section p {
+        font-size: 1em;
     }
 }
